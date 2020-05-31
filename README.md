@@ -33,19 +33,19 @@ The following provides an explanation on how the points found are stored.
 
 Suppose n=k=6 and that we have 6 distinct values in the minimum we converged to: a, b, c, d, e, f (e.g. see Example 1 in paper "Spurious Local Minima are Common in Two-Layer ReLU Neural Networks" by Safran and Shamir which has 5 distinct values), where the point is given explicitly by the matrix:
 
-a b f f f f
-b a f f f f
-e e c d d d
-e e d c d d
-e e d d c d
-e e d d d c
+a b f f f f\
+b a f f f f\
+e e c d d d\
+e e d c d d\
+e e d d c d\
+e e d d d c\
 
 Such a point will be stored with values
-vals = array([[a, f, b],
-              [e, c, d]])
-p = array([2, 4])
+vals = array([[a, f, b],\
+              [e, c, d]])\
+p = array([2, 4])\
 
-More generally: 
+More generally: \
 vals[i, i] stores the i-th main diagonal value.
 vals[i, j] for i!=j<k stores the off-diagonal value appearing at entries where the diagonal values at vals[i, i] and vals[j, j] intersect.
 vals[i, -1] stores the off-diagonal values appearing at the main diagonal block of the value vals[i, i].
@@ -59,17 +59,17 @@ if p[i] == 1 then vals[i, -1] = 0, since this value is not used.
 
 A few concrete examples:
 
-minima=pickle.load(open("Processed minima k=7.p", "rb"))
-In[7]: minima[0].vals
-Out[7]: array([1, 0])
-In[8]: minima[0].p
-Out[8]: array([7])
+minima=pickle.load(open("Processed minima k=7.p", "rb"))\
+In[7]: minima[0].vals\
+Out[7]: array([1, 0])\
+In[8]: minima[0].p\
+Out[8]: array([7])\
 
 The above is the global minimum. If a non-global minimum is found for k=7, then it will be (with overwhelming probability) the following:
 
-In[9]: minima[1].vals
-Out[9]: 
-array([[-0.6327039049,  0.2616910758,  0.          ],
-       [ 0.1859910463,  0.9969227988, -0.0350801559]])
-In[10]: minima[1].p
-Out[10]: array([1, 6])
+In[9]: minima[1].vals\
+Out[9]:\
+array([[-0.6327039049,  0.2616910758,  0.          ],\
+       [ 0.1859910463,  0.9969227988, -0.0350801559]])\
+In[10]: minima[1].p\
+Out[10]: array([1, 6])\

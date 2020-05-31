@@ -7,7 +7,7 @@ In the experiment, for each n=k between 6 and 100, we ran 500 instantiations of 
 
 
 # Files description:
-local_minima.py - main code file containing all the code in the project.
+local_minima.py - main code file containing all the code in the project.\
 Processed minima.zip - zip file containing all the points found after being processed and compressed to a compact form (see explanation below for further detail).
 
 

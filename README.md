@@ -1,20 +1,17 @@
-# Overparameterization
 Code used in the experiment performed in the paper "The Effects of Mild Over-parameterization on the Optimization Landscape of Shallow ReLU Neural Networks".
 
 
-Files description:
-local_minima.py - main code file containing all the code in the project.
-Processed minima.zip - zip file containing all the points found after being processed and compressed to a compact form (see explanation below for further detail).
-
-
-Experiment description:
+# Experiment description:
 
 In the experiment, for each n=k between 6 and 100, we ran 500 instantiations of gradient descent on the objective (Equation 2 in the paper), each using an independent and standard Xavier random initialization and a fixed step size of 5/k, till the norm of the gradient was at most 10^-12. For each point found, we computed the spectrum of its Hessian to ensure that its minimal eigenvalue is positive (using floating point computations), which was always the case. We identified points that were equivalent up to permutations of the neurons and their coordinates (up to Frobenius norm of at most 5*10^-9). For further information on the experiment results see section 4.2 in the paper.
 
 
+# Files description:
+local_minima.py - main code file containing all the code in the project.
+Processed minima.zip - zip file containing all the points found after being processed and compressed to a compact form (see explanation below for further detail).
 
 
-Minimum class structure:
+# Minimum class structure:
 
 The Minimum class was made to exploit the symmetric structure of the minima found, so we can store them in a compact manner and allow a quick and efficient analysis of the points found (without this compression, the 'Converged minima' files created weigh approximately 1GB whereas the compressed files weigh less than 1MB).
 

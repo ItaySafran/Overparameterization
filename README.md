@@ -54,7 +54,7 @@ p[i] stores the number of appearances of each diagonal value vals[i, i].\
 For any minimum found, we have:\
 np.sum(minimum.p) == k
 
-if p[i] == 1 then vals[i, -1] = 0, since this value is not used. \
+if p[i] == 1 then vals[i, -1] = 0, since this value is not used.
 
 
 A few concrete examples:

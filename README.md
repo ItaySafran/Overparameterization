@@ -1,4 +1,4 @@
-Code used in the experiment performed in the paper "The Effects of Mild Over-parameterization on the Optimization Landscape of Shallow ReLU Neural Networks".
+Code used in the experiment performed in the paper [The Effects of Mild Over-parameterization on the Optimization Landscape of Shallow ReLU Neural Networks](https://arxiv.org/abs/2006.01005).
 
 
 # Experiment description:
